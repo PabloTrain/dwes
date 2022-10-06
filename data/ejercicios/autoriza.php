@@ -80,6 +80,20 @@
             }
         }
 
+        //Recogia de un valor hidden
+
+        if (isset($_POST['envio'])) {
+            $ip = $_POST['ip'];
+
+            if (!empty($ip)) {
+             
+                echo "<br> La IP del servidor es " . $ip;
+                
+            }else{
+                echo "<br> No se ha podido encontrar la IP del servidor";
+            }
+        }   
+
     ?>
 </body>
 </html>

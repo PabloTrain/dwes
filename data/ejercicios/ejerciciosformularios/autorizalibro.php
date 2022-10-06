@@ -15,7 +15,6 @@
             $autor = $_POST['autor'];
             $editorial = $_POST['editorial'];
             $numpaginas = $_POST['numpaginas'];
-            
                 
             echo "<br>El título es : " . $titulo . " .";
             echo "<br>El autor es : " . $autor . " .";
