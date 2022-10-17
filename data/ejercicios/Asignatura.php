@@ -38,6 +38,12 @@
 class Asignatura{
     private $nombre = null;
     private $numcreditos = null;
+    static $ciclo = null;
+
+    public function __construct($nombre, $numcreditos){
+        $this->nombre = $nombre;
+        $this->numcreditos = $numcreditos;
+    }
 
     function getNombre(){
         return $this->nombre;
@@ -45,5 +51,28 @@ class Asignatura{
 
     function setNombre($nnombre){
         $this->nombre = $nnombre;
+    }
+
+    function getNumCreditos(){
+        return $this->numcreditos;
+    }
+
+    function setNumCreditos($numcredit){
+        $this->numcreditos = $numcredit;
+    }
+
+    static function getCiclo(){
+        return self::$ciclo;
+    }
+
+    static function setCiclo($nueciclo){
+        self::$ciclo = $nueciclo;
+    }
+
+    function __toString(){
+        return "Datos de la asignatura : " .
+                "<br>- Nombre de la asigantura: " . $this->nombre .
+                "<br>- Número de créditos: " . $this->numcreditos ;
+                
     }
 }//fin de clase    

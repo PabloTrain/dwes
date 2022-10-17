@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario comprobar nombre</h1>
+    <form name="02formularionombre" action="/solucionformularios/05mostrararray.php" method="POST">
+        
+        <p>
+            <label for="titulo" >Introduce el primer nombre: </label>
+            <input type="text" name="nombres[]" id="nombre1" required> 
+
+            <br><label for="titulo" >Introduce el segundo nombre: </label>
+            <input type="text" name="nombres[]" id="nombre2" required> 
+
+            <br><label for="titulo" >Introduce el tercer nombre: </label>
+            <input type="text" name="nombres[]" id="nombre3" required> 
+        </p>
+
+         <input type="submit" name="enviar" value="Enviar"> 
+
+    </form>
+
+</body>
+</html>

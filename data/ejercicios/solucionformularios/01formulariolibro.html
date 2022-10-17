@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Formulario registro libro</h1>
-    <form name="formulariolibro" action="/ejerciciosformularios/autorizalibro.php" method="POST">
+    <form name="01formulariolibro" action="/solucionformularios/01autorizalibro.php" method="POST">
         
         <p>
             <label for="titulo" >Introduce el título: </label>
@@ -26,7 +26,7 @@
 
         <p>
             <label for="numpaginas">Introduce el número de páginas: </label>
-            <input type="number" name="numpaginas" id="numpaginas" required> 
+            <input type="number" name="numpaginas" id="numpaginas" max="1000" required> 
         </p>
 
          <input type="submit" name="registrar" value="Registrar"> 
