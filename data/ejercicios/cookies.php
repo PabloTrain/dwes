@@ -17,7 +17,7 @@ setcookie("segundacookie", $infoguardar, time()+600);
 echo "<h1>Mi primera cookie</h1>";
 echo "Valor de la primera cookie: " . $_COOKIE["primeracookie"];
 echo "<pre>",
-var_dump(unserialize($_COOKIE["segundacookie"]));
+var_dump(unserialize($_COOKIE["segundacookie"]));//La cadena vuelve a como estaba sin serialize
 
 echo "<br>Número de cookies creadas: " . count($_COOKIE);
 
