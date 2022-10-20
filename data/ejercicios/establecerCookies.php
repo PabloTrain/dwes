@@ -2,7 +2,7 @@
     $idioma = $_POST['idiomas']; 
     setcookie("cookieidioma", $idioma, time()+300);
     $marca = $_POST['marcas']; 
-    setcookie("cookiemarca", $marca, time()+300);         
+    setcookie("cookiemarca", $marca, time()+300);       
 ?>
 
 <!DOCTYPE html>

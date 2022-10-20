@@ -12,6 +12,7 @@
 
         if (isset($_POST['mostrar'])) {
 
+            //Recuperamos el valor de la cookie a través de su nombre
             $idioma = $_COOKIE["cookieidioma"];
             $marca = $_COOKIE["cookiemarca"];
 
