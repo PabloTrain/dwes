@@ -14,7 +14,8 @@
     //Creamos un título usando la constante
     echo "<h1>PRIMEROS  " . constante .  " DE LA SUCESSIÓN DE FIBONACCI</h1>";
 
-    //Creamos las variables necesarias
+    //Creamos las variables necesarias y le asignamos los valores para 
+    //realizar la succesión de fibonacci
     $sum = 1;
     $num1 = 0;
     $num2 = 1;
