@@ -6,7 +6,6 @@
     <title>Mostrar resultado</title>
 </head>
 <body>
-    
     <h1>Página mostrar elecciones a través cookies</h1>
     <?php
 
@@ -45,8 +44,7 @@
             //No existen cookies
             echo "<br>Debes seleccionar algunos datos";
             echo "<br><a href='FormularioejercicioCookies.html'>Volver al formulario</a>";
-        }     
-            
+        }          
     ?>
 </body>
 </html>
