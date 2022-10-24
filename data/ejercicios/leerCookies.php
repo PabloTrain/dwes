@@ -10,29 +10,42 @@
     <h1>Página mostrar elecciones a través cookies</h1>
     <?php
 
-        if (isset($_POST['mostrar'])) {
+        //Recuperamos el valor de la cookie a través de su nombre
+        $idioma = $_COOKIE["cookieidioma"];
+        $marca = $_COOKIE["cookiemarca"];
 
-            //Recuperamos el valor de la cookie a través de su nombre
-            $idioma = $_COOKIE["cookieidioma"];
-            $marca = $_COOKIE["cookiemarca"];
+        $mensajeidioma = "";
+        $mensajemarca = "";
 
+        if(isset($idioma) && isset($marca)){
             if($idioma=="español"){
-                echo "<br>Hola";
+                $mensajeidioma = "Bienvenido, querido usuario.";
+                $mensajemarca = "La marca de coche elegida es ";
+
             } else if($idioma=="ingles"){
-                echo "<br>Hello";
+                $mensajeidioma = "Welcome dear user.";
+                $mensajemarca = "The chosen car brand is ";
+
             } else if($idioma=="aleman"){
-                echo "<br>Hallo";
+                $mensajeidioma = "Willcommen lieber Benutzer.";
+                $mensajemarca = "Your favourite car brand is ";
+
+            } else{
+                $mensajeidioma = "Bienvenido, querido usuario";
             }
 
-            if($marca=="toyota"){
-                echo "<br>La marca de coche elegida es Toyota";
-            } else if($marca=="mercedes"){
-                echo "<br>La marca de coche elegida es Mercedes";
-            } else if($marca=="porche"){
-                echo "<br>La marca de coche elegida es Porche";
-            }
+            $mensajemarca = $mensajemarca . $marca . ".";
+
+            //Mostramos la soluccion
+            echo "<br>" . $mensajeidioma;
+            echo "<br>" . $mensajemarca;
+
+        } else{
+            //No existen cookies
+            echo "<br>Debes seleccionar algunos datos";
+            echo "<br><a href='FormularioejercicioCookies.html'>Volver al formulario</a>";
+        }     
             
-        }  
     ?>
 </body>
 </html>

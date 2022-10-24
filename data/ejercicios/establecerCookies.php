@@ -1,23 +1,32 @@
 <?php
-    $idioma = $_POST['idiomas']; 
-    setcookie("cookieidioma", $idioma, time()+300);
-    $marca = $_POST['marcas']; 
-    setcookie("cookiemarca", $marca, time()+300);       
+    if (isset($_POST['establecer'])) {
+        $idioma = $_POST['idiomas']; 
+        if(!empty($idioma) && !isset($_COOKIE["cookieidioma"])){
+            setcookie("cookieidioma", $idioma, time()+3600);
+        } 
+
+        $marca = $_POST['marcas'];  
+        if(!empty($marca) && !isset($_COOKIE["cookiemarca"])){
+            setcookie("cookiemarca", $marca, time()+3600);;
+        } 
+
+        if(!empty($idioma) && !empty($marca)){
+            //Redirige a esa página si no está vacío
+            header("Location: leerCookies.php");
+            //Después de una redirección se colo una exit() o un die()
+            exit(); //die()
+        }
+
+    }else{
+        //Borrar las cookies por seguridad
+        setcookie("cookieidioma", "", time()-7200);
+        setcookie("cookiemarca", "", time()-7200);
+
+
+        //Redireccionara la página inicial
+        header("Location: FormularioejercicioCookies.html");
+        //Ponemos un exit 
+        exit();
+    }
+           
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Establecer cookies</title>
-</head>
-<body>
-<form name="formulariocookeis" action="leerCookies.php" method="POST">
-    <h1>PÁGINA DE ESTABLECER LAS COOKIES</h1>
-     <input type="submit" name="mostrar" value="Mostrar Resultado"> 
-
- </form>
- 
-</body>
-</html>
