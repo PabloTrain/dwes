@@ -31,6 +31,7 @@
                 $mensajemarca = "Your favourite car brand is ";
 
             } else{
+                //Si no selecciona nada, por defecto será en español
                 $mensajeidioma = "Bienvenido, querido usuario";
             }
 
