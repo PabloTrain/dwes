@@ -20,6 +20,7 @@
     $num1 = 0;
     $num2 = 1;
 
+
     //Usaremos un bucle for para calcular la sucessión de fibbonacci
     for($i=1;$i<=constante;$x=$i++){ 
         
