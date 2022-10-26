@@ -3,7 +3,7 @@
 session_start();
 
 //Para eliminar una sesion
-$_SESSION = array();//Se asigna la sesión a un array vacío
+$_SESSION = array();//Se asigna la sesión a un array vacío = unset($_SESSION)
 session_destroy();//Se destruye la información de la sesión, no destruye la cookie
 setcookie(session_name(), '', time()-7200, '/');//Se caduca la cookie
 
