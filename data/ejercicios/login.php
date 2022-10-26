@@ -16,6 +16,14 @@
         
     }//funcion
 
+    //Función para mostrar el usuario si no es correcto
+    function palabraincorrecta($user, $pass){
+        if(!($user=="usuario" && $pass=="1234") && !($user=="admin" && $pass=="4567")){
+            return $user;
+
+        }
+    }
+
     if($_SERVER["REQUEST_METHOD"] === "POST"){
         if(isset($_POST["iniciarsesion"])){
             $credentials = comprobarcredenciales($_POST["usuario"], $_POST["password"]);
@@ -48,13 +56,16 @@
         <!-- En este caso el código php está en la misma página asi que ponemos un # en vez de la ruta-->
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 
-        
-        <label for='usuario'>Usuario </label>
-        <input type='text' name='usuario' id='usuario'>
-        <br><br>
-        <label for='password'>Password </label>
-        <input type='password' name='password' id='password'>
-        <br>
+        <p>
+            <label for='usuario'>Usuario </label>
+            <input type='text' name='usuario' id='usuario' value="<?php if($error == 1){ echo palabraincorrecta($_POST["usuario"], $_POST["password"]);};?>">
+        </p>
+
+        <p>
+            <label for='password'>Password </label>
+            <input type='password' name='password' id='password'>
+        </p>
+
         <input type='submit' name='iniciarsesion' value='Iniciar sesión'>
         </form>
     </body>
