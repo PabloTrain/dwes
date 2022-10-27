@@ -2,6 +2,12 @@
 //Para unirse a una sesión ya iniciada
 session_start();
 
+//Para que no se acceda directamente a esta página sin iniciar sesión
+if(!isset($_SESSION["usuariook"])){
+    //Redirecciona a la página de login
+    header("Location: login.php");
+}
+
 //Cerrar sesion
 $_SESSION = array();//Se asigna la sesión a un array vacío = unset($_SESSION)
 session_destroy();//Se destruye la información de la sesión, no destruye la cookie
