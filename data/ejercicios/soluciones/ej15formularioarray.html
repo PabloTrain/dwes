@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario comprobar nombre</h1>
+    <form name="ej15formularioarray" action="/soluciones/ej15mostrararray.php" method="POST">
+        
+        <p>
+            <!-- PEDIMOS PRIMER NOMBRE -->
+            <label for="titulo" >Introduce el primer nombre: </label>
+            <input type="text" name="nombres[]" id="nombre1" required> 
+
+            <!-- PEDIMOS SEGUNDO NOMBRE -->
+            <br><label for="titulo" >Introduce el segundo nombre: </label>
+            <input type="text" name="nombres[]" id="nombre2" required> 
+
+            <!-- PEDIMOS TERCER NOMBRE -->
+            <br><label for="titulo" >Introduce el tercer nombre: </label>
+            <input type="text" name="nombres[]" id="nombre3" required> 
+        </p>
+
+        <!-- BOTÓN DE ENVIAR -->
+        <input type="submit" name="enviar" value="Enviar"> 
+
+    </form>
+
+</body>
+</html>
