@@ -30,16 +30,32 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         echo "<br><br>";
 
         //OPCION 1 - Decodificar como un array
-        $sesiondecodif= json_decode($sesioncodif, true);
+        $sesiondecodif= json_decode($sesioncodif, true);//Mas sencillo
 
-        echo "<br>Sesion decodificada: <br>";
+        for ($i=0; $i < count($sesiondecodif, COUNT_RECURSIVE)-1; $i++) { 
+            echo  "<br>Elemento " . $i . " es " . $sesiondecodif["deseo"][$i];
+        }
+
+        echo "<br><br>Sesion decodificada como un array: <br>";
         var_dump($sesiondecodif);
         echo "<br><br>";
 
-        //OPCION 1 - Decodificar como un objeto
+        //OPCION 2 - Decodificar como un objeto
         $sesiondecodif= json_decode($sesioncodif);
-        //CAMBIAR EL ELEMENTO 2 A PIZARRA
+        echo "<br>Sesion decodificada como un objeto: <br>";
+        var_dump($sesiondecodif);
+        echo "<br><br>";
 
+        //Cambiar un elemento
+        $sesiondecodif->{"deseo"}[1] ="Portatil";
+
+        //CONVERTIR a un array
+        $miarray = get_object_vars($sesiondecodif);
+        print_r($miarray);
+        echo "<br><br>";
+        for ($i=0; $i < count($miarray, COUNT_RECURSIVE)-1; $i++) { 
+            echo  "<br>Elemento " . $i . " es " . $miarray["deseo"][$i];
+        }
         
     }
 
