@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 19</title>
+</head>
+<body>
+    <h1>Comprobar cookie</h1>
+    
+    <h4>Bienvenido usuario</h4>
+
+    <?php
+      echo "<a href='?method=borrarcolor'>Cambiar color</a>";
+    ?>
+    
+</body>
+</html>
